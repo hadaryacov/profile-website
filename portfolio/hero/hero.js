@@ -1,30 +1,24 @@
 if (Meteor.isClient) {
     Template.hero.onRendered(function(){
-        $('.developer').html('d');
-        setTimeout(function(){
-            $('.developer').html('de');
-        }, 1000);
-        setTimeout(function(){
-            $('.developer').html('dev');
-        }, 1350);
-        setTimeout(function(){
-            $('.developer').html('deve');
-        }, 1500);
-        setTimeout(function(){
-            $('.developer').html('devel');
-        }, 1700);
-        setTimeout(function(){
-            $('.developer').html('develo');
-        }, 1750);
-        setTimeout(function(){
-            $('.developer').html('develop');
-        }, 2000);
-        setTimeout(function(){
-            $('.developer').html('develope');
-        }, 2500);
-        setTimeout(function(){
-            $('.developer').html('developer');
-        }, 2700);
+
+        var creativeCharacters = $('.creative').text().trim().split("");
+        $('.creative').empty();
+        $.each(creativeCharacters, function (i, el) {
+            $('.creative').append("<span class='hide'>" + el + "</span");
+        });
+
+        var developerCharacters = $('.developer').text().trim().split("");
+        $('.developer').empty();
+        $('.developer').append('>');
+        $.each(developerCharacters, function (i, el) {
+            $('.developer').append("<span class='hide'>" + el + "</span");
+        });
+        
+        animateItems($('.hero .creative span'), 'animated flipInX', function(){
+            setTimeout(function(){
+                animateItems($('.hero .developer span'), '');        
+            }, 1000);  
+        });
 
         setTimeout(function(){
             $('.creative').addClass('animated moveUp');
@@ -34,6 +28,6 @@ if (Meteor.isClient) {
         setTimeout(function(){
             $('.my-pic').removeClass('hide').addClass('animated rotateInPic');  
         }, 6000);
-
+        
     });
 }

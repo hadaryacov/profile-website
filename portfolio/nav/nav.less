@@ -18,6 +18,7 @@ body.dark {
 				border-width 	: 100px 100px 0 0;
 				border-color 	: #fff transparent transparent transparent;
 			}
+			&:hover .triangle { border-width 	: 150px 150px 0 0; }
 		}
 		&.right-top {
 			right 	: 100px;
@@ -25,7 +26,8 @@ body.dark {
 			.triangle {
 				border-width 	: 0 100px 100px 0;
 				border-color 	: transparent #fff transparent transparent;
-			}	
+			}
+			&:hover .triangle { border-width 	: 0px 150px 150px 0; }	
 		}
 		&.left-bottom {
 			left  	: 0;
@@ -34,6 +36,7 @@ body.dark {
 				border-width: 100px 0 0 100px;
 				border-color: transparent transparent transparent #fff;
 			}
+			&:hover .triangle { border-width 	: 150px 0px 0px 150px; }	
 		}
 		&.right-bottom {
 			right : 100px;
@@ -42,6 +45,7 @@ body.dark {
 				border-width: 0 0 100px 100px;
 				border-color: transparent transparent #fff transparent;
 			}
+			&:hover .triangle { border-width 	: 0px 0px 150px 150px; }	
 		}
 	}
 }

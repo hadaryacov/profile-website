@@ -9,7 +9,7 @@ if ( Meteor.isClient ) {
 			$('.nav-wrapper.right-bottom').removeClass('hide').addClass('animated rotateInUpLeft');
 			$('.nav-wrapper.left-bottom').removeClass('hide').addClass('animated rotateInUpRight');	
 
-		}, 3800);
+		}, 8000);
 
 	});
 
