@@ -1,0 +1,101 @@
+body.dark {
+	
+	.nav-wrapper {
+		position 	 	: absolute;
+		.triangle {
+			position 		: absolute;
+			width 		 	: 0;
+			height 		 	: 0;
+			border-style 	: solid;
+			transition 	 	: all 0.5s;	
+		}
+		.label { position:absolute; }
+
+		&.left-top {
+			top 	: 0;
+			left 	: 0;
+			.triangle {
+				border-width 	: 100px 100px 0 0;
+				border-color 	: #fff transparent transparent transparent;
+			}
+		}
+		&.right-top {
+			right 	: 100px;
+			top 	: 0;
+			.triangle {
+				border-width 	: 0 100px 100px 0;
+				border-color 	: transparent #fff transparent transparent;
+			}	
+		}
+		&.left-bottom {
+			left  	: 0;
+			bottom 	: 100px;
+			.triangle {
+				border-width: 100px 0 0 100px;
+				border-color: transparent transparent transparent #fff;
+			}
+		}
+		&.right-bottom {
+			right : 100px;
+			bottom : 100px;
+			.triangle {
+				border-width: 0 0 100px 100px;
+				border-color: transparent transparent #fff transparent;
+			}
+		}
+	}
+}
+
+.hide{
+	display:none;
+}
+
+body.light .left-top {
+	position : absolute;
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: 250px;
+	background-image: url('/splash.jpg');
+	background-size: cover;
+	background-color: #BD5E5E;
+	background-blend-mode: luminosity;
+	background-position: center;
+}
+
+body.light .right-top {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 300px;
+	height: 250px;
+	background-image: url('/splash.jpg');
+	background-size: cover;
+	background-color: #56589C;
+	background-blend-mode: luminosity;
+	background-position: center;
+}
+body.light .right-bottom {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 300px;
+	height: 250px;
+	background-image: url('/splash.jpg');
+	background-size: cover;
+	background-color: #ffd268;
+	background-blend-mode: luminosity;
+	background-position: center;
+}
+body.light .left-bottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 300px;
+	height: 250px;
+	background-image: url('/splash.jpg');
+	background-size: cover;
+	background-color: #5E9C7A;
+	background-blend-mode: luminosity;
+	background-position: center;
+}

@@ -1,0 +1,70 @@
+.hero{
+	position:absolute;
+	top:50%;
+	left:50%;
+	font-size:80px;
+	transform:translate3d(-50%,-50%,0);
+	color:white;
+	text-align:center;
+	.developer{
+		font-family: 'Cutive Mono', ;
+		position:relative;
+		color:white;
+		&:after{
+			position 			: absolute;
+			bottom 				: 10px;
+			width 				: 60px;
+			height 				: 5px;
+			content 			: '';
+			background-color 	: white;
+			-webkit-animation-duration 			: 2s;
+					animation-duration 			: 2s;
+			-webkit-animation-fill-mode 		: both;
+					animation-fill-mode 		: both;
+			-webkit-animation-iteration-count 	: infinite;
+					animation-iteration-count 	: infinite;
+			-webkit-animation-name 				: dev-flash;
+					animation-name 				: dev-flash;
+		}
+	}
+}
+
+.light .hero .developer {
+	color:#565656;	
+}
+.light .hero .developer:after {
+	background-color : #565656;
+}
+
+@-webkit-keyframes dev-flash {
+  from, 100%, to {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes dev-flash {
+  from, 100%, to {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.light .hero .creative {
+	color: white;  
+	background: url(splash1-text.jpg) no-repeat;
+	   -webkit-background-clip: text;
+	   -webkit-text-fill-color: transparent;
+}
+
+.hero .creative {
+	font-family: 'Cabin Sketch', cursive;
+	font-weight: bolder;
+	color: white;
+}
