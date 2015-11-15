@@ -15,4 +15,23 @@ if ( Meteor.isClient ) {
 
 	});
 
+	Template.nav.events({
+		'click .nav-wrapper.left-top' : function (event, template) {
+    		$('body').attr('data-item','page-left-top');
+    		appendTextToCode("$('body').attr('data-item','page-left-top');");
+  		},
+  		'click .nav-wrapper.right-top' : function (event, template) {
+    		$('body').attr('data-item','page-right-top');
+    		appendTextToCode("$('body').attr('data-item','page-right-top');");	
+  		},
+  		'click .nav-wrapper.right-bottom' : function (event, template) {
+    		$('body').attr('data-item','page-right-bottom');
+    		appendTextToCode("$('body').attr('data-item','page-right-bottom');");	
+  		},
+  		'click .nav-wrapper.left-bottom' : function (event, template) {
+    		$('body').attr('data-item','page-left-bottom');
+    		appendTextToCode("$('body').attr('data-item','page-left-bottom');");	
+  		},
+	})
+
 }

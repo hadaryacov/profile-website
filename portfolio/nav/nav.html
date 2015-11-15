@@ -1,24 +1,37 @@
 <template name="nav">
-	
+
 	<div class="nav-wrapper left-top hide">
 		<div class="triangle"></div>
-		<div class="label"></div>
+		<div class="label">
+			<img src="skills.png"/>
+		</div>
+		<div class="nav-content">
+			{{> skills}}
+		</div>
 	</div>
 	
 	<div class="nav-wrapper right-top hide">
 		<div class="triangle"></div>
-		<div class="label"></div>
+		<div class="label"><img src="contact.png"/></div>
+		<div class="nav-content">
+			{{> contact}}
+		</div>
 	</div>
 
 	<div class="nav-wrapper left-bottom hide">
 		<div class="triangle"></div>
-		<div class="label"></div>
+		<div class="label"><img src="about.png"/></div>
+		<div class="nav-content">
+			{{> about}}
+		</div>
 	</div>
 	
 	<div class="nav-wrapper right-bottom hide">
 		<div class="triangle"></div>
-		<div class="label"></div>
+		<div class="label"><img src="work.png"/></div>
+		<div class="nav-content">
+			{{> work}}
+		</div>
 	</div>
 	
-
 </template>
