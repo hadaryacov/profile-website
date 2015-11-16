@@ -5,5 +5,6 @@ if ( Meteor.isClient ) {
 			$('body').attr('data-item','');
 			appendTextToCode("$('body').attr('data-item','');");
 		}
+
 	});
 }
