@@ -2,15 +2,15 @@ html, body {
 	height:100%;
 }
 body.dark{
-			background-image  : url(splash41.jpg), radial-gradient(transparent, rgba(0,0,0,1));
-	-webkit-background-image  : url(splash41.jpg), -webkit-radial-gradient(transparent, rgba(0,0,0,1));
-			background-blend-mode: multiply;
-	-webkit-background-blend-mode: multiply;
-			background-size:cover;
-	-webkit-background-size:cover;
-			background-position:center;
-	-webkit-background-position:center;
+	background-image  : url(splash41.jpg), radial-gradient(rgba(0,0,0,0.2), rgba(0,0,0,1));
+	background-image  : url(splash41.jpg), -webkit-radial-gradient(rgba(0,0,0,0.2), rgba(0,0,0,1));
+	background-blend-mode: multiply;
+	background-size:cover;
+	background-position:center;
 	overflow:hidden;
+	@media screen and (max-width: 480px) {
+		background-image : url(splash41-mobile.jpg);
+	}
 }
 
 body.light{
@@ -21,3 +21,7 @@ body.light{
 }
 
 * { box-sizing: border-box }
+
+.hide{
+	display:none;
+}

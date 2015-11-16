@@ -1,4 +1,7 @@
 .hero{
+	@media screen and (max-width: 480px) {
+		font-size:50px;
+	}
 	position:absolute;
 	top:50%;
 	left:50%;
@@ -26,6 +29,12 @@
 					animation-iteration-count 	: infinite;
 			-webkit-animation-name 				: dev-flash;
 					animation-name 				: dev-flash;
+		}
+		@media screen and (max-width: 480px) {
+			&:after{
+				width:20px;
+				height:3px;
+			}
 		}
 	}
 }
@@ -73,17 +82,4 @@
 		display:inline-block;
 		opacity:0;
 	}
-	// span{
-	// 	display:inline-block;
-	// 	transition:all 0.5s ease-out;
-	// 	&:nth-child(1){transform:translate3d(-200px, -100px, 0) rotate(30deg)}
-	// 	&:nth-child(2){transform:translate3d(-150px, -100px, 0) rotate(-40deg)}
-	// 	&:nth-child(3){transform:translate3d(-10px, -70px, 0) rotate(20deg)}
-	// 	&:nth-child(4){transform:translate3d(15px, -50px, 0) rotate(-50deg)}
-	// 	&:nth-child(5){transform:translate3d(140px, -100px, 0) rotate(30deg)}
-	// 	&:nth-child(6){transform:translate3d(165px, -85px, 0) rotate(2deg)}
-	// 	&:nth-child(7){transform:translate3d(200px, -100px, 0) rotate(8deg)}
-	// 	&:nth-child(8){transform:translate3d(220px, -90px, 0) rotate(20deg)}
-
-	// }
 }

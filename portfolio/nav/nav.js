@@ -13,7 +13,6 @@ if ( Meteor.isClient ) {
 			
 		}, 8000);
 
-
 	});
 
 	Template.nav.events({
@@ -76,7 +75,6 @@ if ( Meteor.isClient ) {
     			appendTextToCode("$('.nav-content ul li').addClass('hide').removeClass('fadeInDown');");	
     			appendTextToCode("$('.nav-wrapper').css('z-index','9999');");	
     			appendTextToCode("$('.nav-wrapper.left-bottom').css('z-index','9998');");	
-
     		}
   		},
 	})
