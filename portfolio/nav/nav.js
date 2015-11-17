@@ -30,6 +30,8 @@ if ( Meteor.isClient ) {
 				appendTextToCode("$('.nav-wrapper').css('z-index','9999');");
 				appendTextToCode("$('.nav-wrapper.left-top').css('z-index','9998');");
 				appendTextToCode("animateItems($('.skills ul li'),'animated fadeInDown');");
+			}else{
+				$('body').removeAttr('data-item');
 			}	
   		},
   		'click .nav-wrapper.right-top' : function (event, template) {
@@ -45,6 +47,8 @@ if ( Meteor.isClient ) {
     			appendTextToCode("$('.nav-content ul li').addClass('hide').removeClass('fadeInDown');");	
     			appendTextToCode("$('.nav-wrapper').css('z-index','9999');");
     			appendTextToCode("$('.nav-wrapper.right-top').css('z-index','9998');");
+    		}else{
+    			$('body').removeAttr('data-item');
     		}
   		},
   		'click .nav-wrapper.right-bottom' : function (event, template) {
@@ -60,6 +64,8 @@ if ( Meteor.isClient ) {
   				appendTextToCode("$('.nav-content ul li').addClass('hide').removeClass('fadeInDown');");
   				appendTextToCode("$('.nav-wrapper').css('z-index','9999');");
   				appendTextToCode("$('.nav-wrapper.right-bottom').css('z-index','9998');");	
+  			}else{
+  				$('body').removeAttr('data-item');
   			}
   		},
   		'click .nav-wrapper.left-bottom' : function (event, template) {
@@ -75,6 +81,8 @@ if ( Meteor.isClient ) {
     			appendTextToCode("$('.nav-content ul li').addClass('hide').removeClass('fadeInDown');");	
     			appendTextToCode("$('.nav-wrapper').css('z-index','9999');");	
     			appendTextToCode("$('.nav-wrapper.left-bottom').css('z-index','9998');");	
+    		}else{
+    			$('body').removeAttr('data-item');
     		}
   		},
 	})

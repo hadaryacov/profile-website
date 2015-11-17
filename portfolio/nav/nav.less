@@ -106,7 +106,10 @@ body.dark {
 		position : absolute;
 		z-index : 999;
 		&:hover{
-			.label img{width:50px}
+			@media screen and (min-width: 480px) {
+				.label img{width:50px}
+			}
+
 		}
 		&.left-top {
 			top 	: 0;
@@ -117,8 +120,10 @@ body.dark {
 			}
 			.label {top:10px;left:10px;}
 			&:hover {
-				.triangle {border-width : 150px 150px 0 0;}
-				.label {top : 20px; left:20px;}
+				@media screen and (min-width: 480px) {
+					.triangle {border-width : 150px 150px 0 0;}
+					.label {top : 20px; left:20px;}
+				}
 			}
 		}
 		&.right-top {
@@ -130,8 +135,10 @@ body.dark {
 			}
 			.label { top:10px; right:10px; }
 			&:hover {
-				.triangle { border-width 	: 0px 150px 150px 0; }
-				.label {top:20px;right:20px;}
+				@media screen and (min-width: 480px) {
+					.triangle { border-width 	: 0px 150px 150px 0; }
+					.label {top:20px;right:20px;}
+				}
 			}
 		}
 		&.left-bottom {
@@ -143,8 +150,10 @@ body.dark {
 			}	
 			.label {bottom:10px;left:10px;}
 			&:hover { 
-				.triangle{border-width 	: 150px 0px 0px 150px; }
-				.label {bottom:20px;left:20px;}
+				@media screen and (min-width: 480px) {
+					.triangle{border-width 	: 150px 0px 0px 150px; }
+					.label {bottom:20px;left:20px;}
+				}
 			}
 		}
 		&.right-bottom {
@@ -156,8 +165,10 @@ body.dark {
 			}
 			.label {bottom:10px;right:10px;}
 			&:hover{
-				.triangle { border-width 	: 0px 0px 150px 150px; }
-				.label {bottom:20px;right:20px;}
+				@media screen and (min-width: 480px) {
+					.triangle { border-width 	: 0px 0px 150px 150px; }
+					.label {bottom:20px;right:20px;}
+				}
 			}
 		}
 		.nav-content {
@@ -179,6 +190,7 @@ body.dark {
 			border-style 	: solid;
 			transition 	 	: all 0.5s;	
 			cursor:pointer;
+			opacity:0.8;
 		}
 		.label { 
 			position:absolute;
