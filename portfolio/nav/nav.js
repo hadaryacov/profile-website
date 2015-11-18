@@ -41,7 +41,7 @@ if ( Meteor.isClient ) {
     			$('.nav-wrapper').css('z-index','9999');
     			$('.nav-wrapper.right-top').css('z-index','9998');
 
-				animateItems($('.contact ul li'),'animated fadeInDown');	
+				animateItems($('.about ul li'),'animated fadeInDown');	
     			
     			appendTextToCode("$('body').attr('data-item','page-right-top');");
     			appendTextToCode("$('.nav-content ul li').addClass('hide').removeClass('fadeInDown');");	
@@ -75,7 +75,7 @@ if ( Meteor.isClient ) {
     			$('.nav-wrapper').css('z-index','9999');
     			$('.nav-wrapper.left-bottom').css('z-index','9998');
 
-				animateItems($('.about ul li'),'animated fadeInDown');	
+				animateItems($('.contact ul li'),'animated fadeInDown');	
 
     			appendTextToCode("$('body').attr('data-item','page-left-bottom');");
     			appendTextToCode("$('.nav-content ul li').addClass('hide').removeClass('fadeInDown');");	
