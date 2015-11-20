@@ -1,29 +1,5 @@
 body.dark {
-	
-	&[data-item="page-left-top"]{
-		.nav-wrapper.left-top {
-			.label {
-				background-color: #e9e9e9;
-				border:1px solid rgba(0,0,0,0.1);
-    			border-radius: 50%;
-    			top: 20px;
-    			left : 20px;
-    			width: 100px;
-    			height: 100px;
-    			line-height: 140px;
-    			text-align: center;
-    			img{width:50px}
-			}
-			.triangle{border-width 	: 600px 600px 0 0;}
-			&:hover .triangle{border-width 	: 600px 600px 0 0;}
-			.nav-content{
-				display:block;
-				top: 130px;
-    			left: 30px;
-			}
-		}
-	}
-	&[data-item="page-left-bottom"]{
+	//&[data-item="page-left-bottom"]{
 		.nav-wrapper.left-bottom {
 			.label {
 				background-color: #e9e9e9;
@@ -46,8 +22,8 @@ body.dark {
 				left:30px;
 			}
 		}
-	}
-	&[data-item="page-right-bottom"]{
+	//}
+	//&[data-item="page-right-bottom"]{
 		.nav-wrapper.right-bottom {
 			.label {
 				background-color: #e9e9e9;
@@ -74,8 +50,8 @@ body.dark {
 				//}
 			}
 		}
-	}
-	&[data-item="page-right-top"]{
+	//}
+	//&[data-item="page-right-top"]{
 		.nav-wrapper.right-top {
 			.label {
 				background-color: #e9e9e9;
@@ -100,7 +76,7 @@ body.dark {
 				text-align:right;
 			}
 		}
-	}
+	//}
 	
 	.nav-wrapper {
 		position : absolute;
@@ -109,7 +85,6 @@ body.dark {
 			@media screen and (min-width: 480px) {
 				.label img{width:50px}
 			}
-
 		}
 		&.left-top {
 			top 	: 0;
@@ -119,6 +94,26 @@ body.dark {
 				border-color 	: #fff transparent transparent transparent;
 			}
 			.label {top:10px;left:10px;}
+			&.selected{
+				label {
+					background-color: #e9e9e9;
+					border:1px solid rgba(0,0,0,0.1);
+	    			border-radius: 50%;
+	    			transform:translate3d(20px, 20px, 1);
+	    			width: 100px;
+	    			height: 100px;
+	    			line-height: 140px;
+	    			text-align: center;
+	    			img{width:50px}
+				}
+				.triangle{border-width 	: 600px 600px 0 0;}
+				&:hover .triangle{border-width 	: 600px 600px 0 0;}
+				.nav-content{
+					display:block;
+					top: 130px;
+	    			left: 30px;
+				}
+			}
 			&:hover {
 				@media screen and (min-width: 480px) {
 					.triangle {border-width : 150px 150px 0 0;}
