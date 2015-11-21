@@ -28,6 +28,17 @@ $(document).ready(function(){
 	animateIntro();
 	appendTextToCode("animateIntro();");
 
+	var $lis = $('.nav-content.contact').find('li');
+	var $li;
+	for (var i=0; i <= $lis.length - 1; i++){
+		$li = $($lis[i]);
+		var angle = (90/($lis.length-1) * i) * (Math.PI/180) ;
+		var x = 150 * Math.cos(angle) + 10;
+		var y = 150 * Math.sin(angle) + 10;
+
+		$li.css({'top': y + 'px', 'right' : x + 'px'});
+	}
+
 	$('.nav-wrapper').click(function(){
 		openNav($(this));
 		appendTextToCode("openNav($(this));");
@@ -40,12 +51,15 @@ $(document).ready(function(){
 openNav = function openNav($navItem){
 
 	if( $navItem.hasClass('selected') ){
-		$navItem.find('ul li').removeClass('fadeInDown').addClass('hide');
+		$navItem.find('li').removeClass('animated fadeInDown').addClass('hide');
 		$navItem.removeClass('selected');
+
 	} else {
 		$('.nav-wrapper').removeClass('selected');
 		$navItem.addClass('selected');
-
+		
+		$('.nav-wrapper:not(.selected) li').removeClass('animated fadeInDown').addClass('hide');
+		
 		for(var i=0; i <= $navItem.find('ul').length; i++){
 			animateItems($($navItem.find('ul')[i]).find('li'), 'animated fadeInDown');
 		}
