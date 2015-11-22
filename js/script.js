@@ -46,6 +46,14 @@ $(document).ready(function(){
 
 	appendTextToCode('//bind click event to navigation items');
 	appendTextToCode("$('.nav-wrapper').click(function(){openNav($(this));});");
+
+	$( window ).scroll(function() {
+  		if($(window).scrollTop() > 50){
+  			$('.nav-wrapper .triangle').addClass('darker');
+  		}else{
+  			$('.nav-wrapper .triangle').removeClass('darker');
+  		}
+	});
 });
 
 openNav = function openNav($navItem){

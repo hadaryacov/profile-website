@@ -1,8 +1,11 @@
 html, body {
 	height:100%;
 }
-body.dark{
-	background-image: url('../images/stardust.png'), radial-gradient(circle at 87.99% 13%, #5E7EBD, transparent 67%), radial-gradient(circle at 15% 34.06%, #155d58, transparent 30%), radial-gradient(circle at 17.01% 21.07%, #000000, transparent 97%), radial-gradient(circle at 70.97% 34.06%, #055e68, transparent 40%), radial-gradient(circle at 50% 50%, #0C8050, #410a6d 100%), radial-gradient(circle at 50% 99%, #ffffff, transparent 100%);
+body.dark .main{
+	//background-image: url('../images/stardust.png'), radial-gradient(circle at 87.99% 13%, #5E7EBD, transparent 67%), radial-gradient(circle at 15% 34.06%, #155d58, transparent 30%), radial-gradient(circle at 17.01% 21.07%, #000000, transparent 97%), radial-gradient(circle at 70.97% 34.06%, #055e68, transparent 40%), radial-gradient(circle at 50% 50%, #0C8050, #410a6d 100%), radial-gradient(circle at 50% 99%, #ffffff, transparent 100%);
+	background:radial-gradient(circle at 87.99% 13%,#b9d2d2,transparent 67%),radial-gradient(circle at 15% 34.06%,#155d58,transparent 30%),radial-gradient(circle at 17.01% 21.07%,#000,transparent 97%),radial-gradient(circle at 70.97% 34.06%,#055e68,transparent 40%),radial-gradient(circle at 50% 50%,#0F8E82,#410a6d 100%),radial-gradient(circle at 50% 99%,#fff,transparent 100%);
+	//background:radial-gradient(circle at 87.99% 13%, #b9d2d2, transparent 67%), radial-gradient(circle at 15% 34.06%, #155d58, transparent 30%), radial-gradient(circle at 17.01% 21.07%, #000000, transparent 97%), radial-gradient(circle at 70.97% 34.06%, #055e68, transparent 40%), radial-gradient(circle at 50% 50%, #01c7ff, #410a6d 100%), radial-gradient(circle at 50% 99%, #ffffff, transparent 100%);
+	// background:radial-gradient(circle at 87.99% 13%,#C200F3,transparent 67%),radial-gradient(circle at 15% 34.06%,#5DE0D7,transparent 30%),radial-gradient(circle at 17.01% 21.07%,#000,transparent 97%),radial-gradient(circle at 70.97% 34.06%,rgba(93, 93, 93, 0.86),transparent 40%),radial-gradient(circle at 50% 50%,#0077FF,#130101 100%),radial-gradient(circle at 50% 99%,#fff,transparent 100%);
 	background-blend-mode: soft-light;
 	background-size:cover;
 	background-position:center;
@@ -10,6 +13,7 @@ body.dark{
 	@media screen and (max-width: 480px) {
 		background-image : url(../images/mobile-bg.jpg);
 	}
+	height:100%;
 }
 
 * { box-sizing: border-box }
@@ -41,7 +45,7 @@ body.dark{
 		width: 100px;
 		height: 100px;
 	}
-	background-image: url('../images/mobile-bg.jpg'), url('../images/center.jpg');
+	background-image: url('../images/mobile-bg.jpg'), url('../images/pic.jpg');
 	border-radius: 50%;
 	width: 200px;
 	height: 200px;
@@ -151,7 +155,7 @@ body.dark{
 //nav
 body.dark {
 	.nav-wrapper {
-		position : absolute;
+		position : fixed;
 		z-index : 999;
 		&.selected{
 			z-index : 998;
@@ -172,6 +176,9 @@ body.dark {
 			.triangle {
 				border-width 	: 100px 100px 0 0;
 				border-color 	: #fff transparent transparent transparent;
+				&.darker{
+					border-color: #e9e9e9 transparent transparent transparent;
+				}
 			}
 			.label {top:10px;left:10px;}
 			.nav-content {top:110px;left:30px;}
@@ -192,6 +199,9 @@ body.dark {
 			.triangle {
 				border-width 	: 0 100px 100px 0;
 				border-color 	: transparent #fff transparent transparent;
+				&.darker{
+					border-color: transparent #e9e9e9 transparent transparent;
+				}
 			}
 			.label { top:10px; right:10px; }
 			.nav-content{ top:130px;right:30px;text-align:right;}
@@ -212,6 +222,9 @@ body.dark {
 			.triangle {
 				border-width: 100px 0 0 100px;
 				border-color: transparent transparent transparent #fff;
+				&.darker{
+					border-color: transparent transparent transparent #e9e9e9;
+				}
 			}	
 			.label {bottom:10px;left:10px;}
 			.nav-content {bottom:110px;left:30px;}
@@ -232,6 +245,9 @@ body.dark {
 			.triangle {
 				border-width: 0 0 100px 100px;
 				border-color: transparent transparent #fff transparent;
+				&.darker{
+					border-color: transparent transparent #e9e9e9 transparent;
+				}
 			}
 			.label {bottom:10px;right:10px;}
 			.nav-content {bottom:130px;right:30px;text-align:right;	}
@@ -318,13 +334,13 @@ body.dark {
 	li{margin-bottom:10px}
 }
 
-body.work{
+.work{
 	background-color:white;
 	font-family: 'Open Sans', sans-serif;
 	font-weight:lighter;
 	overflow:auto;
 	h1{
-		color:white;
+		color: #464646;
 		font-family: 'Open Sans', sans-serif;
 		font-weight:lighter;
 		text-align:center;
@@ -332,45 +348,37 @@ body.work{
 	section{
 		width:100%;
 		div.wrapper{
-			margin:0 auto;
 			padding:30px;
-			margin-bottom:50px;
+			margin: 50px auto 25px auto;
 			max-width: 1000px;
 			min-height: 500px;
 			border-radius: 5px;
 			display:flex;
 			align-items: center;
 			justify-content: center;
-			&.nine-box{
-				background: linear-gradient(#293a84,#5d86ca);
-				color:white;
-			}//nine-box
-			&.ignitor{
-				background: #8e9eab; /* fallback for old browsers */
-				background: -webkit-linear-gradient(to left, #8e9eab , #eef2f3); /* Chrome 10-25, Safari 5.1-6 */
-				background: linear-gradient(to left, #8e9eab , #eef2f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
-				background: radial-gradient(circle at 87.99% 13%, #0c8062, transparent 67%), radial-gradient(circle at 15% 34.06%, #155d58, transparent 30%), radial-gradient(circle at 17.01% 21.07%, #000000, transparent 97%), radial-gradient(circle at 70.97% 34.06%, #4ddca7, transparent 40%), radial-gradient(circle at 50% 50%, #01c7ff, #410a6d 100%), radial-gradient(circle at 50% 99%, #ffffff, transparent 100%);
-				color:white;
-				.screens{flex : 2.5; video{transform:rotate(7deg)}}
-				.description{padding:0 80px 0 0;}
+			color:white;
+			@media screen and (max-width: 700px) {
+				display:block;
+				background:white !important;
+				color:#464646 !important;
+				border-bottom:1px solid rgba(0,0,0,0.1);
+				border-radius:0;
+				margin:0 !important;
+				div:first-child{
+					margin-bottom:20px;
+				}
 			}
-			&.wing-it{
-				background: #7b4397; /* fallback for old browsers */
-				background: -webkit-linear-gradient(to right top,#D02A67,#7b4397);
-				background: linear-gradient(to right top,#D02A67,#7b4397);
-				.screen{flex:2.5;}
-			}
-			&.iknow{
-				background: #136a8a; /* fallback for old browsers */
-				background: -webkit-linear-gradient(to left, #136a8a , #267871); /* Chrome 10-25, Safari 5.1-6 */
-				background: linear-gradient(to left, #136a8a , #267871); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+			@media screen and (min-width: 700px) {
+				&.reverse-order{
+					flex-direction:row-reverse;
+					.description {
+						padding:0 0 0px 80px;
+					}
+				}
 			}
 			.description{
-				padding:0 0 0px 80px;
+				padding:0 80px 0px 0px;
 				flex : 1;
-				float: right;
-				width: 50%;
-				color:white;
 				h2{
 					font-family: 'Open Sans', sans-serif;
 					font-weight:lighter;
@@ -379,18 +387,94 @@ body.work{
 					padding-bottom: 5px;
 					margin-bottom: 5px;
 				}
+				@media screen and (max-width: 700px) {
+					width:100%;
+					padding:0 !important;
+				}
+				.technologies {
+					opacity : 0.7;
+					font-size:12px;
+					margin-top:15px;
+				}
 			}
 			.screens{
 				background-size: cover;
 				flex : 1;
-	    		width: 50%;
+	    		position:relative;
+	    		@media screen and (max-width: 700px) {
+	    			width:100%;
+	    		}
 	    		video{
 	    			width: 100%;
 	    			border-radius:5px;
-	    			transform: rotate(-10deg);
+	    			transform: rotate(-5deg);
 	    			box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+	    			@media screen and (max-width: 700px) {
+	    				transform:rotate(0deg) !important;
+	    			}
 	    		}//video
 			}//ipad
+			&.nine-box{
+				background: #136a8a; /* fallback for old browsers */
+				background: -webkit-linear-gradient(to right, #136a8a , #267871); /* Chrome 10-25, Safari 5.1-6 */
+				background: linear-gradient(to right, #136a8a , #267871); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+				video{transform: rotate(5deg);}
+			}//nine-box
+			&.ignitor{
+				background: #8e9eab; /* fallback for old browsers */
+				background: -webkit-linear-gradient(to left, #8e9eab , #eef2f3); /* Chrome 10-25, Safari 5.1-6 */
+				background: linear-gradient(to left, #8e9eab , #eef2f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+				background: radial-gradient(circle at 87.99% 13%, #0c8062, transparent 67%), radial-gradient(circle at 15% 34.06%, #155d58, transparent 30%), radial-gradient(circle at 17.01% 21.07%, #000000, transparent 97%), radial-gradient(circle at 70.97% 34.06%, #4ddca7, transparent 40%), radial-gradient(circle at 50% 50%, #01c7ff, #410a6d 100%), radial-gradient(circle at 50% 99%, #ffffff, transparent 100%);
+				.screens{flex : 2.5; video{transform:rotate(7deg)}}
+				.description{padding:0 80px 0 0;}
+			}
+			&.wing-it{
+				background: radial-gradient(circle at 87.99% 13%, #b9d2d2, transparent 67%), radial-gradient(circle at 15% 34.06%, #155d58, transparent 30%), radial-gradient(circle at 17.01% 21.07%, #000000, transparent 97%), radial-gradient(circle at 70.97% 34.06%, #055e68, transparent 40%), radial-gradient(circle at 50% 50%, #01c7ff, #410a6d 100%), radial-gradient(circle at 50% 99%, #ffffff, transparent 100%);
+				.screens{flex:2.5;}
+			}
+			&.iknow{
+				position:relative;
+				background: linear-gradient(#293a84,#5d86ca);
+				.screens{
+					position:relative;
+					img.website{
+						width:100%;border-radius:5px;
+						box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+					}
+					img.screenshot1{    
+						position: absolute;
+					    width: 100px;
+					    bottom: -30px;
+					    right: -13px;
+					}
+					img.screenshot2{
+					    position: absolute;
+					    width: 100px;
+					    right: 40px;
+					    bottom: -30px;
+					}
+				}
+			}
+			&.room{
+				background: #485563; /* fallback for old browsers */
+				background: -webkit-linear-gradient(to left, #485563 , #29323c); /* Chrome 10-25, Safari 5.1-6 */
+				background: linear-gradient(to left, #485563 , #29323c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+				.description{padding:0 80px 0 0;}
+				.screens{flex:3;video{transform:rotate(-5deg)}}
+			}
+			&.workflow{
+				background: #73C8A9; /* fallback for old browsers */
+				background: -webkit-linear-gradient(to left, #73C8A9 , #373B44); /* Chrome 10-25, Safari 5.1-6 */
+				background: linear-gradient(to left, #73C8A9 , #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+			}
+			&.fun{
+				background: #7b4397; /* fallback for old browsers */
+				background: -webkit-linear-gradient(to right top,#D02A67,#7b4397);
+				background: linear-gradient(to right top,#D02A67,#7b4397);
+				video.barchart{position: absolute;top: 40px;width: 40%;}
+				video.blackjack{transform: rotate(10deg);}
+				video.accordion{transform: rotate(0deg);width: 50%;}
+			}
 		}
 	}//section
 }//work
