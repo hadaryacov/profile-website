@@ -39,6 +39,17 @@ $(document).ready(function(){
 		$li.css({'top': y + 'px', 'right' : x + 'px'});
 	}
 
+	var $lis = $('.nav-content.projects').find('li');
+	var $li;
+	for (var i=0; i <= $lis.length - 1; i++){
+		$li = $($lis[i]);
+		var angle = (90/($lis.length-1) * i) * (Math.PI/180) ;
+		var x = 150 * Math.cos(angle) + 10;
+		var y = 150 * Math.sin(angle) + 10;
+
+		$li.css({'bottom': y + 'px', 'right' : x + 'px'});
+	}
+
 	$('.nav-wrapper').click(function(){
 		openNav($(this));
 		appendTextToCode("openNav($(this));");

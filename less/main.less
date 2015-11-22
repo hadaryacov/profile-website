@@ -327,6 +327,20 @@ body.dark {
 			}
 		}
 	}
+	&.projects{
+		bottom:0px !important;
+		right:0px !important;
+		ul{
+			position:absolute;
+			margin: 0;
+			li{
+				position:absolute;
+				bottom:0;
+				right:0;
+				img{width:45px;cursor:pointer;}
+			}
+		}
+	}
 }
 
 .skills{
@@ -404,7 +418,7 @@ body.dark {
 	    		@media screen and (max-width: 700px) {
 	    			width:100%;
 	    		}
-	    		video{
+	    		video, img{
 	    			width: 100%;
 	    			border-radius:5px;
 	    			transform: rotate(-5deg);
