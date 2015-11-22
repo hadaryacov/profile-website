@@ -20,10 +20,37 @@ appendTextToCode = function appendTextToCode(txt){
 	$('.code').html($('.code').html() + '<br/>' + txt);
 }
 
+scrollingAnimation = function(){
+
+	$('.cloud').addClass("hidden").viewportChecker({
+        classToAdd: 'visible animated fadeInDown',
+        offset: 200
+   	});
+
+   	$('.cloud:after').addClass("hidden").viewportChecker({
+        classToAdd: 'visible animated fadeInDown',
+        offset: 100
+   	});
+
+   	$('.cloud:before').addClass("hidden").viewportChecker({
+        classToAdd: 'visible animated fadeInDown',
+        offset: 150
+   	});
+
+   	$('.ocean').addClass("hidden").viewportChecker({
+        classToAdd: 'visible animated fadeInUp',
+        offset: 100
+   	});
+
+}
+
 var $body;
 
 $(document).ready(function(){
+
 	$body = $('body');
+
+	scrollingAnimation();
 
 	animateIntro();
 	appendTextToCode("animateIntro();");
@@ -50,6 +77,21 @@ $(document).ready(function(){
 		$li.css({'bottom': y + 'px', 'right' : x + 'px'});
 	}
 
+	var $lis = $('.sun .project');
+	var $li;
+	for (var i=0; i <= $lis.length - 1; i++){
+		$li = $($lis[i]);
+		var angle = (180/($lis.length-1) * i) * (Math.PI/180) ;
+		var x = 80 * Math.cos(angle) + 45;
+		var y = 80 * Math.sin(angle) + 50;
+
+		$li.css({
+			'bottom': y + 'px', 
+			'right' : x + 'px',
+			'transform' : 'rotate(' + (180/($lis.length-1) * i) + 'deg)'
+		});
+	}
+
 	$('.nav-wrapper').click(function(){
 		openNav($(this));
 		appendTextToCode("openNav($(this));");
@@ -63,6 +105,11 @@ $(document).ready(function(){
   			$('.nav-wrapper .triangle').addClass('darker');
   		}else{
   			$('.nav-wrapper .triangle').removeClass('darker');
+  		}
+  		if($(window).scrollTop() >= $(window).height()){
+  			$('.bird').css('position','fixed');
+  		}else{
+  			$('.bird').css('position','absolute');
   		}
 	});
 });
@@ -144,8 +191,10 @@ animateIntro = function animateIntro(){
 		$('.nav-wrapper.right-top').removeClass('hide').addClass('animated rotateInDownLeft');
 		$('.nav-wrapper.right-bottom').removeClass('hide').addClass('animated rotateInUpLeft');
 		$('.nav-wrapper.left-bottom').removeClass('hide').addClass('animated rotateInUpRight');	
+		$('.arrow-down').removeClass('hidden');
+		$('body').css('overflow','auto');
 
 		appendTextToCode("$('.nav-wrapper.left-top').removeClass('hide').addClass('animated rotateInDownRight');<br/>$('.nav-wrapper.right-top').removeClass('hide').addClass('animated rotateInDownLeft');<br/>$('.nav-wrapper.right-bottom').removeClass('hide').addClass('animated rotateInUpLeft');<br/>$('.nav-wrapper.left-bottom').removeClass('hide').addClass('animated rotateInUpRight');");
 		
-	}, 8000);
+	}, 7000);
 }
